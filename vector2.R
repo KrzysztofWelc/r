@@ -9,5 +9,6 @@ v4
 v4 <- as.numeric(v4)
 bad <- is.na(v4)
 #u do³u wusuwamy wartoœci fa³szywe z vektora
+#bad to vektor z boolami, nie bool
 v4 <- v4[!bad]
 v4
