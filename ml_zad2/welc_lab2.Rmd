@@ -1,0 +1,38 @@
+---
+title: "welc_lab2"
+output: html_notebook
+---
+
+załadowanie biblioteki 
+```{r}
+library(dplyr)
+```
+
+załadowanie danych 
+```{r}
+data <- read.csv('./data.csv', sep=";", header=T, dec=".")
+```
+
+usunięcie pustej kolumny i zmiana nagłówków
+```{r}
+data = data[ ,-3]
+names(data) <- c("date", "pm2.5")
+```
+
+sformatowanie dat
+```{r}
+data$date <- as.Date(data$date)
+```
+
+wybranie danych z poniedziałków
+```{r}
+data <- filter(data, weekdays(data$date) == "poniedziałek")
+```
+
+obliczenie średniej stężenia pm2.5 z poniedziałków
+```{r}
+pmMean <- mean(data$pm2.5)
+```
+
+
+

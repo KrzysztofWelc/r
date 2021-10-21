@@ -1,5 +1,0 @@
-class("36")
-class(36)
-class(36L)
-class(36+0i)
-class(TRUE)
